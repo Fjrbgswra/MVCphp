@@ -1,0 +1,8 @@
+-multiviews = menghindari kesalahan atau ambigu ketika memanggil folder/file dlm public
+-rewriteon = menulis ulang url
+-RewriteCond %{REQUEST_FILENAME} !-d = jika url yg ditulis folder kita abaikan
+-RewriteCond %{REQUEST_FILENAME} !-f = jika url yg ditulis file kita abaikan
+-RewriteRule ^ = membaca apapun yg ditulis di url mulai dari awal
+-RewriteRule ^(.*)$ = ambil karakter satu persatu sampai karakternya selesai
+-RewriteRule ^(.*)$ index.php?url=$l = arahkan semua karakter ke index, dimana semua nnti di place holder $l
+-RewriteRule ^(.*)$ index.php?url=$l [L] = kalau ada rule lain selain ini jalan jalankan rule
